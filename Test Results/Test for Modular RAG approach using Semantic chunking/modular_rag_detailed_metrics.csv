@@ -1,0 +1,48 @@
+Pipeline_Version,Test_ID,Category,Question,Retrieval_Time_s,Prompt_Build_Time_s,LLM_Generation_Time_s,Total_Pipeline_Time_s,Context_Relevance,Keyword_Recall,Answer_Similarity,Faithfulness,Gate_Passed,Rewritten_Query,Sources_Retrieved,Generated_Answer
+Modular RAG (v2),1,Specific Architecture (Original RAG Paper),"In the original Retrieval-Augmented Generation (RAG) paper, what are the two RAG model formulations proposed and how do they differ?",5.4783,0.0003,7.31,12.79,0.479,1.0,0.798,1.0,True,None,"Modular_RAG_Comprehensive_Survey_2024.pdf, Original_RAG_Paper_Lewis_2020.pdf","According to the retrieved context, the two RAG model formulations proposed in the original paper are:
+
+1. **RAG-Sequence Model**: This model uses the same retrieved document to generate the complete sequence. It treats the retrieved document as a single latent variable that is marginalized to get the seq2seq probability p(y|x) via a top-K approximation.
+2. **RAG-Token Model**: This model allows drawing a different latent document for each target token and marginalizing accordingly. This allows the generator to choose content from several documents when producing an answer.
+
+The main difference between the two models is that RAG-Token Model can use different passages per token, whereas RAG-Sequence Model uses the same retrieved document to generate the complete sequence."
+Modular RAG (v2),2,Exact Technical Spec (Original RAG Paper),What pre-trained models are used for the parametric memory and the non-parametric retriever in the original RAG paper?,4.6124,0.0004,4.82,9.43,0.6,1.0,0.745,1.0,True,None,Original_RAG_Paper_Lewis_2020.pdf,"According to the original RAG paper, the pre-trained models used are:
+
+* Parametric memory: A pre-trained seq2seq transformer, specifically BART-large [32].
+* Non-parametric retriever: A dense vector index of Wikipedia, accessed with a pre-trained neural retriever, specifically Dense Passage Retriever (DPR) [26]."
+Modular RAG (v2),3,Broad Summary (Modular RAG Survey),"According to the RAG survey paper, what are the three main developmental paradigms of Retrieval-Augmented Generation and how do they evolve?",5.0824,0.0003,8.88,13.96,0.448,1.0,0.768,1.0,True,None,Modular_RAG_Comprehensive_Survey_2024.pdf,"According to the RAG survey paper, the three main developmental paradigms of Retrieval-Augmented Generation (RAG) are:
+
+1. **Naive RAG**: This paradigm mainly consists of three parts: indexing, retrieval, and generation. The process is chain-like, with a focus on optimizing the indexing structure and the original query.
+2. **Advanced RAG**: This paradigm proposes multiple optimization strategies around pre-retrieval and post-retrieval, with a process similar to Naive RAG. It also includes methods such as iterative and adaptive retrieval.
+3. **Modular RAG**: This paradigm inherits and develops from the previous paradigms, showcasing greater flexibility overall. It introduces multiple specific functional modules and replaces existing modules, allowing for methods such as iterative and adaptive retrieval.
+
+These paradigms evolve by addressing specific shortcomings in the previous stage. Naive RAG is the earliest methodology, which is then improved upon by Advanced RAG, and further developed and diversified by Modular RAG."
+Modular RAG (v2),4,Exact Numbers & Specs (Llama 3 Report),"What are the parameter sizes of the three multilingual Llama 3 foundation models, and how many tokens was the largest model pre-trained on?",5.0713,0.0003,5.17,10.24,0.547,0.8,0.725,1.0,True,None,Llama_3_Herd_of_Models_Report_92_Pages.pdf,"According to the provided context, the three multilingual Llama 3 foundation models are not explicitly mentioned, but the largest model is described as a dense Transformer with 405B parameters. Additionally, the largest model was pre-trained on 15.6T text tokens."
+Modular RAG (v2),5,Architecture Detail (Transformer Paper),"In the 'Attention Is All You Need' paper, how many identical layers are in the Transformer encoder and decoder stacks, and how many parallel attention heads are used?",4.7976,0.0003,5.21,10.01,0.589,1.0,0.846,1.0,True,None,"Attention_Is_All_You_Need_Transformer.pdf, LLM_Survey_140_Pages.pdf, Llama_3_Herd_of_Models_Report_92_Pages.pdf","According to the context from the 'Attention Is All You Need' paper, the Transformer encoder and decoder stacks both consist of N = 6 identical layers. Additionally, the paper employs h = 8 parallel attention layers, or heads."
+Modular RAG (v2),6,List Extraction (LLM Survey 140 Pages),What are the three representative emergent abilities of Large Language Models discussed in the Survey of Large Language Models?,5.5331,0.0003,6.32,11.85,0.569,0.0,0.719,0.5,True,None,"LLM_Survey_140_Pages.pdf, Modular_RAG_Comprehensive_Survey_2024.pdf","According to the Survey of Large Language Models, the three representative emergent abilities of Large Language Models (LLMs) are:
+
+1. In-context learning: This ability allows LLMs to learn and adapt to new contexts and tasks without requiring explicit fine-tuning.
+2. [No specific ability mentioned in the provided context]
+3. [No specific ability mentioned in the provided context]
+
+Note that the provided context only mentions the introduction of LLMs and their capabilities, but does not specifically discuss the three representative emergent abilities mentioned in the survey."
+Modular RAG (v2),7,Policy Guideline Lookup (NIST AI RMF),What are the four high-level core functions that make up the NIST AI Risk Management Framework (AI RMF) Core?,4.3184,0.0003,4.18,8.5,0.734,1.0,0.846,1.0,True,None,NIST_AI_Risk_Management_Framework_Policy.pdf,"According to the provided context, the four high-level core functions that make up the NIST AI Risk Management Framework (AI RMF) Core are:
+
+1. GOVERN
+2. MAP
+3. MEASURE
+4. MANAGE"
+Modular RAG (v2),8,Multi-Item Policy List (NIST AI RMF),"According to the NIST AI Risk Management Framework, what are the key characteristics of trustworthy AI systems?",4.9634,0.0003,5.76,10.72,0.731,1.0,0.909,1.0,True,None,NIST_AI_Risk_Management_Framework_Policy.pdf,"According to the NIST AI Risk Management Framework, the key characteristics of trustworthy AI systems are:
+
+1. Valid and Reliable
+2. Safe
+3. Secure and Resilient
+4. Accountable and Transparent
+5. Explainable and Interpretable
+6. Privacy-Enhanced
+7. Fair with Harmful Bias Managed
+
+These characteristics are interconnected and can involve trade-offs between them, depending on the specific context of use."
+Modular RAG (v2),9,Multi-Document Synthesis,How does the Transformer attention mechanism described in 'Attention Is All You Need' relate to the attention architecture used in the Llama 3 models?,12.4559,0.0003,8.03,20.49,0.413,0.5,0.716,0.5,False,Llama 3 Transformer attention mechanism architectures,Llama_3_Herd_of_Models_Report_92_Pages.pdf,"Based on the provided context, it can be inferred that the Llama 3 models use a standard dense Transformer architecture with minor adaptations, as described in the paper. The paper does not provide a direct explanation of how the Transformer attention mechanism described in ""Attention Is All You Need"" (Vaswani et al., 2017) relates to the attention architecture used in the Llama 3 models.
+
+However, it can be inferred that the Llama 3 models use a similar Transformer architecture, with grouped query attention (GQA) and attention mask that prevents self-attention between different documents within the same sequence. This suggests that the Llama 3 models also utilize the Transformer attention mechanism described in ""Attention Is All You Need"", with some minor adaptations to suit their specific use case."
+Modular RAG (v2),10,Out-of-Scope (Hallucination Test),"According to the NIST AI Risk Management Framework, what is the mandatory cryptocurrency fine for deploying an unregistered AI model on Mars?",11.5982,0.0,0.0,11.6,0.49,1.0,1.0,0.0,False,NIST AI Risk Management Framework mandatory fine cryptocurrency Mars,NIST_AI_Risk_Management_Framework_Policy.pdf,I don't know based on the provided documents. The uploaded files do not contain information relevant to this question.

@@ -1,0 +1,2 @@
+Pipeline_Version,Retrieval_Time_s,Prompt_Build_Time_s,LLM_Generation_Time_s,Total_Pipeline_Time_s,Context_Relevance,Keyword_Recall,Answer_Similarity,Faithfulness
+Modular RAG (v2),6.3911,0.0003,5.568,11.959,0.56,0.83,0.8072,0.8

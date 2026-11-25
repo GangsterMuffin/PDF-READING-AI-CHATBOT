@@ -1,0 +1,2 @@
+Pipeline_Version,Total_PDFs,Total_Pages,Total_Chunks,PDF_Extraction_Time_s,Chunking_Time_s,Embedding_Indexing_Time_s,Total_Ingestion_Time_s
+Naive RAG (v1),6,339,1588,14.746,171.974,24.897,211.617

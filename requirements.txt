@@ -1,0 +1,21 @@
+# PREREQUISITE: Download and install the Ollama desktop app from https://ollama.com
+# Before running the notebooks, open a terminal and run: ollama pull llama3
+
+
+langchain
+langchain-community
+langchain-core
+langchain-classic
+langchain-huggingface
+langchain-text-splitters
+langchain-experimental
+faiss-cpu
+pypdf
+sentence-transformers
+rank_bm25
+ollama
+pandas
+numpy
+matplotlib
+seaborn
+streamlit

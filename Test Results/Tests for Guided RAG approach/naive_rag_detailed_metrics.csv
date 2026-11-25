@@ -1,0 +1,49 @@
+Pipeline_Version,Test_ID,Category,Question,Retrieval_Time_s,Prompt_Build_Time_s,LLM_Generation_Time_s,Total_Pipeline_Time_s,Context_Relevance,Keyword_Recall,Answer_Similarity,Faithfulness,Sources_Retrieved,Generated_Answer
+Naive RAG (v1),1,Specific Architecture (Original RAG Paper),"In the original Retrieval-Augmented Generation (RAG) paper, what are the two RAG model formulations proposed and how do they differ?",0.0143,0.0004,3.39,3.41,0.685,0.0,0.611,0.0,Modular_RAG_Comprehensive_Survey_2024.pdf,I don't know the answer. The provided context does not mention the original Retrieval-Augmented Generation (RAG) paper or the two RAG model formulations proposed in it.
+Naive RAG (v1),2,Exact Technical Spec (Original RAG Paper),What pre-trained models are used for the parametric memory and the non-parametric retriever in the original RAG paper?,0.0139,0.0004,3.48,3.49,0.641,1.0,0.813,1.0,Original_RAG_Paper_Lewis_2020.pdf,"Based on the provided context, the answer is:
+
+* Parametric memory: BART (Base size)
+* Non-parametric retriever: Dense Passage Retriever (DPR)"
+Naive RAG (v1),3,Broad Summary (Modular RAG Survey),"According to the RAG survey paper, what are the three main developmental paradigms of Retrieval-Augmented Generation and how do they evolve?",0.0094,0.0003,4.84,4.85,0.593,0.75,0.609,0.5,"Modular_RAG_Comprehensive_Survey_2024.pdf, Original_RAG_Paper_Lewis_2020.pdf","According to the Modular_RAG_Comprehensive_Survey_2024.pdf, the three main research paradigms from over 100 RAG studies are not explicitly mentioned. However, the survey does mention that it summarizes three main research paradigms, but the specific paradigms are not elaborated upon.
+
+The Original_RAG_Paper_Lewis_2020.pdf only provides specific results and ablations for a particular RAG model, RAG-Sequence, but does not discuss the broader evolution of RAG methodologies and applications."
+Naive RAG (v1),4,Exact Numbers & Specs (Llama 3 Report),"What are the parameter sizes of the three multilingual Llama 3 foundation models, and how many tokens was the largest model pre-trained on?",0.0112,0.0004,5.19,5.2,0.613,0.8,0.843,1.0,Llama_3_Herd_of_Models_Report_92_Pages.pdf,"According to the provided context, the three multilingual Llama 3 foundation models have the following parameter sizes:
+
+1. Llama 3 8B: 8 billion parameters
+2. Llama 3 70B: 70 billion parameters
+3. Llama 3 405B: 405 billion parameters
+
+As for the number of tokens the largest model was pre-trained on, it is mentioned that the Llama 3 405B model was pre-trained on 15.6T (15.6 trillion) text tokens."
+Naive RAG (v1),5,Architecture Detail (Transformer Paper),"In the 'Attention Is All You Need' paper, how many identical layers are in the Transformer encoder and decoder stacks, and how many parallel attention heads are used?",0.011,0.0003,3.53,3.55,0.669,0.8,0.909,1.0,Attention_Is_All_You_Need_Transformer.pdf,"According to the context, the Transformer encoder and decoder stacks both consist of N = 6 identical layers. Additionally, the paper employs h = 8 parallel attention layers, or heads."
+Naive RAG (v1),6,List Extraction (LLM Survey 140 Pages),What are the three representative emergent abilities of Large Language Models discussed in the Survey of Large Language Models?,0.0108,0.0005,4.36,4.37,0.691,0.0,0.645,0.0,"LLM_Survey_140_Pages.pdf, Original_RAG_Paper_Lewis_2020.pdf","I don't know. The provided context does not mention the survey of large language models, nor does it discuss emergent abilities of large language models. It appears to be a collection of references to various papers and articles on the topic of large language models, but it does not provide information on specific emergent abilities."
+Naive RAG (v1),7,Policy Guideline Lookup (NIST AI RMF),What are the four high-level core functions that make up the NIST AI Risk Management Framework (AI RMF) Core?,0.0104,0.0004,4.45,4.46,0.795,1.0,0.791,1.0,NIST_AI_Risk_Management_Framework_Policy.pdf,"According to the provided context, the four high-level core functions that make up the NIST AI Risk Management Framework (AI RMF) Core are:
+
+1. GOVERN
+2. MAP
+3. MEASURE
+4. MANAGE
+
+These functions are illustrated in Figure 5 and are designed to provide outcomes and actions that enable dialogue, understanding, and activities to manage AI risks and responsibly develop trustworthy AI systems."
+Naive RAG (v1),8,Multi-Item Policy List (NIST AI RMF),"According to the NIST AI Risk Management Framework, what are the key characteristics of trustworthy AI systems?",0.0098,0.0003,4.54,4.55,0.786,1.0,0.905,1.0,NIST_AI_Risk_Management_Framework_Policy.pdf,"According to the NIST AI Risk Management Framework, the key characteristics of trustworthy AI systems are:
+
+1. Valid and reliable
+2. Safe
+3. Secure and resilient
+4. Accountable and transparent
+5. Explainable and interpretable
+6. Privacy-enhanced
+7. Fair, with harmful bias managed
+
+These characteristics are outlined in Part 1 of the Framework and are considered essential for AI systems to be considered trustworthy."
+Naive RAG (v1),9,Multi-Document Synthesis,How does the Transformer attention mechanism described in 'Attention Is All You Need' relate to the attention architecture used in the Llama 3 models?,0.0149,0.0004,8.72,8.74,0.61,0.75,0.84,0.5,"Attention_Is_All_You_Need_Transformer.pdf, Llama_3_Herd_of_Models_Report_92_Pages.pdf","According to the provided context, the Transformer attention mechanism described in 'Attention Is All You Need' uses multi-head attention in three different ways:
+
+1. Encoder-decoder attention: The queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder.
+2. Self-attention in the encoder: Each position in the encoder can attend to all positions in the previous layer of the encoder.
+3. Self-attention in the decoder: Each position in the decoder can attend to all positions in the decoder up to and including that position.
+
+In contrast, the Llama 3 models use a standard, dense Transformer architecture with some modifications. One of these modifications is the use of grouped query attention (GQA) with 8 key-value heads to improve inference speed and reduce the size of key-value caches during decoding.
+
+The Llama 3 models do not seem to employ the exact same attention mechanisms as the Transformer model described in 'Attention Is All You Need'. Specifically, the Llama 3 models do not use encoder-decoder attention or self-attention in the encoder. Instead, they use grouped query attention (GQA) and an attention mask that prevents self-attention between different documents within the same sequence.
+
+Therefore, the Transformer attention mechanism described in 'Attention Is All You Need' does not exactly relate to the attention architecture used in the Llama 3 models."
+Naive RAG (v1),10,Out-of-Scope (Hallucination Test),"According to the NIST AI Risk Management Framework, what is the mandatory cryptocurrency fine for deploying an unregistered AI model on Mars?",0.0131,0.0003,3.83,3.84,0.539,1.0,0.928,0.0,NIST_AI_Risk_Management_Framework_Policy.pdf,"I don't know. The provided context does not mention cryptocurrency fines or any information related to deploying AI models on Mars. The context only discusses AI risk management, privacy and cybersecurity risk management, and the development of the NIST AI Risk Management Framework."
